@@ -2,8 +2,9 @@
 
 use PHPieces\ANZGateway\ChargeRequest;
 use PHPieces\ANZGateway\Config;
+use PHPieces\ANZGateway\TestCase;
 
-class ChargeRequestTest extends PHPUnit_Framework_TestCase
+class ChargeRequestTest extends TestCase
 {
 
     /**

@@ -43,5 +43,10 @@ class TestCase extends PHPUnit_Framework_TestCase
 
         $this->successResponse = http_build_query($successResponse);
         $this->failureResponse = http_build_query($failureResponse);
+
+        Config::set('egate', [
+            'MERCHANT_ID' => 'FOOBAR',
+            'MERCHANT_ACCESS_CODE' => '1QAZ2WSX'
+        ]);
     }
 }

@@ -32,9 +32,14 @@ class Config
         return self::loadFromStore($path);
     }
 
+    public function set($key, $val)
+    {
+        self::$store[$key] = $val;
+    }
+
     private static function loadToStore($path)
     {
-        $vars = split("\.", $path);
+        $vars = explode(".", $path);
         $file = array_shift($vars);
         self::$store[$file] = include(self::$baseDir."{$file}.php");
     }
