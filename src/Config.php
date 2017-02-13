@@ -32,7 +32,7 @@ class Config
         return self::loadFromStore($path);
     }
 
-    public function set($key, $val)
+    public static function set($key, $val)
     {
         self::$store[$key] = $val;
     }
