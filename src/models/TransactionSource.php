@@ -20,11 +20,13 @@ class TransactionSource extends Model
      * @var string
      */
     private $subType;
+
     private $types = [
         "INTERNET"  => "Indicates an Internet transaction",
         "MAILORDER" => "Indicates a mail order transaction",
         "TELORDER"  => "Indicates a telephone order transaction",
     ];
+    
     private $subTypes = [
         ""            => "No subtype",
         "SINGLE"      => "Indicates a single payment to complete order",

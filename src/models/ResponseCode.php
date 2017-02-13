@@ -17,7 +17,7 @@ class ResponseCode extends Model
      *
      * Required
      *
-     * @var String
+     * @var int
      */
     private $txnResponseCode;
 

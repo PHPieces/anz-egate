@@ -84,17 +84,17 @@ if($response->isSuccess()) {
 
 The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
 
-[ico-version]: https://img.shields.io/packagist/v/PHPieces/anz-egate.svg?style=flat-square
+[ico-version]: https://img.shields.io/packagist/v/phpieces/anz-egate.svg?style=flat-square
 [ico-license]: https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square
-[ico-travis]: https://img.shields.io/travis/PHPieces/anz-egate/master.svg?style=flat-square
-[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/PHPieces/anz-egate.svg?style=flat-square
-[ico-code-quality]: https://img.shields.io/scrutinizer/g/PHPieces/anz-egate.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/PHPieces/anz-egate.svg?style=flat-square
+[ico-travis]: https://img.shields.io/travis/phpieces/anz-egate/master.svg?style=flat-square
+[ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/phpieces/anz-egate.svg?style=flat-square
+[ico-code-quality]: https://img.shields.io/scrutinizer/g/phpieces/anz-egate.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/phpieces/anz-egate.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/PHPieces/anz-egate
-[link-travis]: https://travis-ci.org/PHPieces/anz-egate
-[link-scrutinizer]: https://scrutinizer-ci.com/g/PHPieces/anz-egate/code-structure
-[link-code-quality]: https://scrutinizer-ci.com/g/PHPieces/anz-egate
-[link-downloads]: https://packagist.org/packages/PHPieces/anz-egate
+[link-packagist]: https://packagist.org/packages/phpieces/anz-egate
+[link-travis]: https://travis-ci.org/phpieces/anz-egate
+[link-scrutinizer]: https://scrutinizer-ci.com/g/phpieces/anz-egate/code-structure
+[link-code-quality]: https://scrutinizer-ci.com/g/phpieces/anz-egate
+[link-downloads]: https://packagist.org/packages/phpieces/anz-egate
 [link-author]: https://github.com/:author_username
 [link-contributors]: ../../contributors
