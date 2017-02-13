@@ -54,6 +54,9 @@ class Config
             if (!is_array($config)) {
                 return null;
             }
+            if(!array_key_exists($var, $config)) {
+                return null;
+            }
             $config = $config[$var];
         }
         return $config;

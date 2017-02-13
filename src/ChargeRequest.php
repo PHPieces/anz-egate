@@ -88,7 +88,7 @@ class ChargeRequest
         );
     }
 
-    public function getFields()
+    public static function getFields()
     {
         return array_merge(
             Card::getFields(),

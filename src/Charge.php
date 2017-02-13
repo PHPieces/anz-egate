@@ -31,6 +31,7 @@ class Charge
     public $receiptNo;
     public $transactionNo;
     public $responseContent;
+    private $failedValidation = false;
 
     public function __construct($params)
     {
@@ -48,14 +49,22 @@ class Charge
         parse_str($params, $output);
         $this->responseContent = $params;
         $this->responseCode = ResponseCode::create($output);
-        $this->amount = $output[self::AMOUNT];
-        $this->batchNo = $output[self::BATCH_NO];
-        $this->card = $output[self::CARD];
-        $this->locale = $output[self::LOCALE];
-        $this->merchTxnRef = $output[self::MERCH_TXN_REF];
-        $this->orderInfo = $output[self::ORDER_INFO];
-        $this->receiptNo = $output[self::RECEIPT_NO];
-        $this->transactionNo = $output[self::TRANSACTION_NO];
+
+        //Required
+        $this->transactionNo = @$output[self::TRANSACTION_NO];
+
+        //From Input
+        $this->amount = @$output[self::AMOUNT];
+        $this->locale = @$output[self::LOCALE];
+        $this->merchTxnRef = @$output[self::MERCH_TXN_REF];
+        $this->orderInfo = @$output[self::ORDER_INFO];
+
+        //Optional
+        $this->batchNo = @$output[self::BATCH_NO];
+        $this->card = @$output[self::CARD];
+        $this->receiptNo = @$output[self::RECEIPT_NO];
+
+        $this->validate();
     }
 
     /**
@@ -65,10 +74,16 @@ class Charge
      */
     private function validate()
     {
+        if (empty($this->transactionNo)) {
+            $this->failedValidation = true;
+        }
     }
 
     public function isSuccess()
     {
+        if ($this->failedValidation) {
+            return false;
+        }
         return $this->responseCode->isSuccess();
     }
 
