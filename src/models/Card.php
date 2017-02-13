@@ -72,9 +72,9 @@ class Card extends Model
     public function toArray()
     {
         return [
-           CardFields::CARD_NUMBER        => $this->cardNumber,
-           CardFields::CARD_EXPIRY_DATE   => $this->expiryDate,
-           CardFields::CARD_SECURITY_CODE => $this->securityCode,
+            CardFields::CARD_NUMBER        => $this->cardNumber,
+            CardFields::CARD_EXPIRY_DATE   => $this->expiryDate,
+            CardFields::CARD_SECURITY_CODE => $this->securityCode,
         ];
     }
 }

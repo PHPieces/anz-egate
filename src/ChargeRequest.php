@@ -6,7 +6,6 @@ use PHPieces\ANZGateway\models\Card;
 use PHPieces\ANZGateway\models\Merchant;
 use PHPieces\ANZGateway\models\Payment;
 use PHPieces\ANZGateway\models\TransactionSource;
-use ReflectionClass;
 
 class ChargeRequest
 {
