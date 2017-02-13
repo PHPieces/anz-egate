@@ -15,12 +15,6 @@ However the code is thoughoghly tested and used in production
 Add the repo to your composer file:
 ```json
 {
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/jclyons52/anz"
-        }
-    ],
     "require": {
         "phpieces/anz-egate": "dev-master"
     }
