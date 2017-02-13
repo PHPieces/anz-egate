@@ -1,0 +1,41 @@
+{
+    "name": "phpieces/anz-egate",
+    "type": "library",
+    "description": "This is a wrapper for the ANZ payment gateway to make it easier to use.",
+    "keywords": [
+        "phpieces",
+        "anz-egate"
+    ],
+    "homepage": "https://github.com/phpieces/anz-egate",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joseph Lyons",
+            "email": "jlyons@bglcorp.com.au",
+            "homepage": "https://github.com/jclyons52",
+            "role": "Developer"
+        },
+          {
+            "name": "Marc Yu",
+            "email": "myu@bglcorp.com.au",
+            "homepage": "https://github.com/myu",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^5.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "PHPieces\\ANZGateway\\": "src/"
+        }
+    },
+     "autoload-dev": {
+        "psr-4": {
+            "PHPieces\\ANZGateway\\": "tests"
+        }
+    }
+}

@@ -1,0 +1,7 @@
+vendor
+nbproject
+docs/api
+build
+report
+testResults.html
+config/egate.php
