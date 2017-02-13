@@ -46,7 +46,7 @@ class Config
 
     private static function loadFromStore($path)
     {
-        $vars = split("\.", $path);
+        $vars = explode(".", $path);
         $file = array_shift($vars);
         $config = self::$store[$file];
 
@@ -61,7 +61,7 @@ class Config
 
     private static function loaded($path)
     {
-        $vars = split("\.", $path);
+        $vars = explode(".", $path);
         $file = array_shift($vars);
         return isset(self::$store[$file]);
     }

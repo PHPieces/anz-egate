@@ -67,7 +67,10 @@ class ChargeRequest
     public static function create($params)
     {
         return new self(
-            Card::create($params), Merchant::create($params), TransactionSource::create($params), Payment::create($params)
+            Card::create($params),
+            Merchant::create($params),
+            TransactionSource::create($params),
+            Payment::create($params)
         );
     }
 

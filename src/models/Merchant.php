@@ -72,7 +72,7 @@ class Merchant extends Model
 
     /**
      *
-     * @return []
+     * @return array
      */
     public function toArray()
     {
