@@ -15,7 +15,6 @@ class Model
 
     private static function getConstructorArguments($params, $constants)
     {
-        $data = array_intersect_key($params, $constants);
         $arguments = [];
         foreach ($constants as $key => $val) {
             if (isset($params[$key])) {

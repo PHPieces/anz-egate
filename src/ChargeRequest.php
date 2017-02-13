@@ -32,7 +32,7 @@ class ChargeRequest
 
     /**
      *
-     * @var PaymPayment  */
+     * @var Payment  */
     private $payment;
 
     /**
