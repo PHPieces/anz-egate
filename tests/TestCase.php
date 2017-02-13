@@ -1,4 +1,6 @@
-<?php namespace PHPieces\ANZGateway;
+<?php
+
+namespace PHPieces\ANZGateway;
 
 use PHPUnit_Framework_TestCase;
 
@@ -10,6 +12,12 @@ class TestCase extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         parent::setUp();
+
+        Config::set('egate', [
+            'MERCHANT_ID'          => 'FOOBAR',
+            'MERCHANT_ACCESS_CODE' => '1QAZ2WSX'
+        ]);
+
         $successResponse = [
             'vpc_AVSResultCode'   => 'Unsupported',
             'vpc_AcqAVSRespCode'  => 'Unsupported',
@@ -43,10 +51,5 @@ class TestCase extends PHPUnit_Framework_TestCase
 
         $this->successResponse = http_build_query($successResponse);
         $this->failureResponse = http_build_query($failureResponse);
-
-        Config::set('egate', [
-            'MERCHANT_ID' => 'FOOBAR',
-            'MERCHANT_ACCESS_CODE' => '1QAZ2WSX'
-        ]);
     }
 }
