@@ -12,88 +12,71 @@ class Gateway
      * @param Client
      */
     private $client;
-    private $merchantID;
-    private $merchantAccessCode;
-    private $data = [];
 
     /**
      *
-     * @param Client $client
+     * @var String
      */
+    private $merchantID;
+
+    /**
+     *
+     * @var String
+     */
+    private $merchantAccessCode;
+
+    /**
+     *
+     * @var Array
+     */
+    private $data = [];
+
     public function __construct(Client $client)
     {
         $this->client = $client;
     }
 
-    /**
-     * 
-     * @return Gateway
-     */
-    public static function create()
+    public static function create() : self
     {
         return new self(new Client([
             'base_uri' => Config::load('egate.url'),
         ]));
     }
 
-    /**
-     *
-     * @param String $id
-     */
-    public function setMerchantID($id)
+    public function setMerchantID(string $id) : void
     {
         $this->merchantID = $id;
     }
 
-    /**
-     *
-     * @param String $code
-     */
-    public function setAccessCode($code)
+    public function setAccessCode(string $code) : void
     {
         $this->merchantAccessCode = $code;
     }
 
-    /**
-     *
-     * @param Array $data
-     * @return $this
-     */
-    public function purchase($data)
+    public function purchase(array $data) : self
     {
         $this->data = $data;
         return $this;
     }
 
-    /**
-     * @return Charge
-     */
-    public function send()
+    public function send() : Charge
     {
         $request = ChargeRequest::create($this->getData());
         return $this->charge($request);
     }
 
-    /**
-     *
-     * @return Array
-     */
-    private function getData()
+    private function getData() : array
     {
         return array_merge(
-            $this->data, [
+            $this->data,
+            [
                 MerchantFields::MERCHANT_ID         => $this->merchantID,
                 MerchantFields::MERCHANT_ACCESSCODE => $this->merchantAccessCode,
             ]
         );
     }
 
-    /**
-     *
-     * @param ChargeRequest $charge
-     * @return Charge
-     */
-    public function charge(ChargeRequest $charge)
+    public function charge(ChargeRequest $charge) : Charge
     {
         $response = $this->client->request('POST', Config::load('egate.url'), ['form_params' => $charge->toArray()]);
 

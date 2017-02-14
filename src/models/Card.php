@@ -44,7 +44,7 @@ class Card extends Model
      * @param int $securityCode
      * @param string $cardType
      */
-    public function __construct($cardNumber, $expiryDate, $securityCode, $cardType
+    public function __construct(int $cardNumber, int $expiryDate, int $securityCode, string $cardType
     = '')
     {
         $this->cardType = (string) $cardType;
@@ -58,7 +58,7 @@ class Card extends Model
         $this->validate();
     }
 
-    public function validate()
+    public function validate() : void
     {
         $currentDate = new DateTime();
 
@@ -69,7 +69,7 @@ class Card extends Model
         }
     }
 
-    public function toArray()
+    public function toArray() : array
     {
         return [
             CardFields::CARD_NUMBER        => $this->cardNumber,

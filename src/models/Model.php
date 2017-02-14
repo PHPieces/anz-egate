@@ -7,13 +7,13 @@ use ReflectionClass;
 class Model
 {
 
-    private static function getConstants()
+    private static function getConstants() : array
     {
         $class = static::$fields;
         return array_flip((new ReflectionClass($class))->getConstants());
     }
 
-    private static function getConstructorArguments($params, $constants)
+    private static function getConstructorArguments(array $params, array $constants) : array
     {
         $arguments = [];
         foreach ($constants as $key => $val) {
@@ -24,7 +24,7 @@ class Model
         return $arguments;
     }
 
-    public static function create($params)
+    public static function create(array $params) : self
     {
         $reflector = new ReflectionClass(static::class);
         $constants = self::getConstants();
@@ -32,7 +32,7 @@ class Model
         return $reflector->newInstanceArgs($data);
     }
 
-    public static function getFields()
+    public static function getFields() : array
     {
         $fields = (new ReflectionClass(static::$fields))->getConstants();
 

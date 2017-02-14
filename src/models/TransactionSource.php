@@ -34,14 +34,14 @@ class TransactionSource extends Model
         "RECURRING"   => "Indicates a recurring transaction",
     ];
 
-    public function __construct($type = 'INTERNET', $subType = '')
+    public function __construct(string $type = 'INTERNET', string $subType = '')
     {
         $this->type = (string) $type;
         $this->subType = (string) $subType;
         $this->validate();
     }
 
-    public function validate()
+    public function validate() : void
     {
         if (!array_key_exists($this->type, $this->types)) {
             throw new InvalidArgumentException("invalid transaction type supplied");
@@ -52,7 +52,7 @@ class TransactionSource extends Model
         }
     }
 
-    public function toArray()
+    public function toArray() : array
     {
         return [
             TransactionFields::TYPE_FIELD     => $this->type,

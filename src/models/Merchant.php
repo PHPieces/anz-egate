@@ -37,16 +37,10 @@ class Merchant extends Model
      */
     private $merchantID;
 
-    /**
-     *
-     * @param String $merchantAccessCode
-     * @param String $merchantTransactionReference
-     * @param String $merchantID
-     */
     public function __construct(
-        $merchantAccessCode,
-        $merchantTransactionReference,
-        $merchantID
+        string $merchantAccessCode,
+        string $merchantTransactionReference,
+        string $merchantID
     ) {
     
         $this->validate($merchantAccessCode, $merchantTransactionReference, $merchantID);
@@ -62,19 +56,19 @@ class Merchant extends Model
      * @param String $merchantID
      * @throws InvalidMerchantDetails
      */
-    private function validate($merchantAccessCode, $merchantTransactionReference, $merchantID)
-    {
+    private function validate(
+        string $merchantAccessCode,
+        string $merchantTransactionReference,
+        string $merchantID
+    ) : void {
+    
         if (empty($merchantAccessCode) || empty($merchantTransactionReference) || empty($merchantID)
         ) {
             throw new InvalidMerchantDetails("Missing merchant details");
         }
     }
 
-    /**
-     *
-     * @return array
-     */
-    public function toArray()
+    public function toArray() : array
     {
         return [
             MerchantFields::MERCHANT_ACCESSCODE            => $this->merchantAccessCode,

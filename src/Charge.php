@@ -39,11 +39,7 @@ class Charge
         $this->validate();
     }
 
-    /**
-     *
-     * @param array $params
-     */
-    private function formDecode($params)
+    private function formDecode(string $params) : void
     {
         $output = [];
         parse_str($params, $output);
@@ -72,14 +68,14 @@ class Charge
      * @throws RequiredArgumentException
      * @throws Exception
      */
-    private function validate()
+    private function validate() : void
     {
         if (empty($this->transactionNo)) {
             $this->failedValidation = true;
         }
     }
 
-    public function isSuccess()
+    public function isSuccess() : bool
     {
         if ($this->failedValidation) {
             return false;
@@ -87,12 +83,12 @@ class Charge
         return $this->responseCode->isSuccess();
     }
 
-    public function getMessage()
+    public function getMessage() : string
     {
         return $this->responseCode->getErrorMessage();
     }
 
-    public function toArray()
+    public function toArray() : array
     {
         return [
             'responseContent' => $this->responseContent,

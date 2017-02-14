@@ -54,7 +54,7 @@ class Payment extends Model
         $this->validate();
     }
 
-    public function validate()
+    public function validate() : void
     {
         
         if ($this->purchaseAmount < 1) {
@@ -68,7 +68,7 @@ class Payment extends Model
         }
     }
 
-    public function toArray()
+    public function toArray() : array
     {
         return [
             PaymentFields::PURCHASE_AMOUNT       => $this->purchaseAmount,

@@ -52,7 +52,7 @@ class ResponseCode extends Model
 //        $this->validate();
     }
 
-    public function isSuccess()
+    public function isSuccess() : bool
     {
         if ($this->txnResponseCode !== TransactionResponseCode::TRANSACTION_APPROVED) {
             return false;
@@ -60,17 +60,17 @@ class ResponseCode extends Model
         return true;
     }
 
-    public function getErrorMessage()
+    public function getErrorMessage() : string
     {
         return TransactionResponseCode::MESSAGE[$this->txnResponseCode].", ".$this->message;
     }
 
-    public function toJson()
+    public function toJson() : string
     {
         return json_encode($this->toArray());
     }
 
-    public function toArray()
+    public function toArray() : array
     {
         return [
             'AVSResultCode'     => $this->AVSResultCode,

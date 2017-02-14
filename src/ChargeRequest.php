@@ -63,7 +63,7 @@ class ChargeRequest
         $this->payment = $payment;
     }
 
-    public static function create($params)
+    public static function create(array $params) : self
     {
         return new self(
             Card::create($params),
@@ -73,7 +73,7 @@ class ChargeRequest
         );
     }
 
-    public function toArray()
+    public function toArray() : array
     {
         return array_merge(
             $this->card->toArray(),
@@ -87,7 +87,7 @@ class ChargeRequest
         );
     }
 
-    public static function getFields()
+    public static function getFields(): array
     {
         return array_merge(
             Card::getFields(),
