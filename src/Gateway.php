@@ -16,11 +16,19 @@ class Gateway
     private $merchantAccessCode;
     private $data = [];
 
+    /**
+     *
+     * @param Client $client
+     */
     public function __construct(Client $client)
     {
         $this->client = $client;
     }
 
+    /**
+     * 
+     * @return Gateway
+     */
     public static function create()
     {
         return new self(new Client([
@@ -28,35 +36,54 @@ class Gateway
         ]));
     }
 
+    /**
+     *
+     * @param String $id
+     */
     public function setMerchantID($id)
     {
         $this->merchantID = $id;
     }
 
+    /**
+     *
+     * @param String $code
+     */
     public function setAccessCode($code)
     {
         $this->merchantAccessCode = $code;
     }
 
+    /**
+     *
+     * @param Array $data
+     * @return $this
+     */
     public function purchase($data)
     {
         $this->data = $data;
         return $this;
     }
 
+    /**
+     * @return Charge
+     */
     public function send()
     {
         $request = ChargeRequest::create($this->getData());
         return $this->charge($request);
     }
 
+    /**
+     *
+     * @return Array
+     */
     private function getData()
     {
         return array_merge(
-            $this->data,
-            [
-            MerchantFields::MERCHANT_ID         => $this->merchantID,
-            MerchantFields::MERCHANT_ACCESSCODE => $this->merchantAccessCode,
+            $this->data, [
+                MerchantFields::MERCHANT_ID         => $this->merchantID,
+                MerchantFields::MERCHANT_ACCESSCODE => $this->merchantAccessCode,
             ]
         );
     }

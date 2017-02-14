@@ -89,12 +89,12 @@ The MIT License (MIT). Please see [License File](LICENSE.md) for more informatio
 [ico-travis]: https://img.shields.io/travis/PHPieces/anz-egate/master.svg?style=flat-square
 [ico-scrutinizer]: https://img.shields.io/scrutinizer/coverage/g/PHPieces/anz-egate.svg?style=flat-square
 [ico-code-quality]: https://img.shields.io/scrutinizer/g/PHPieces/anz-egate.svg?style=flat-square
-[ico-downloads]: https://img.shields.io/packagist/dt/phpieces/anz-egate.svg?style=flat-square
+[ico-downloads]: https://img.shields.io/packagist/dt/PHPieces/anz-egate.svg?style=flat-square
 
-[link-packagist]: https://packagist.org/packages/phpieces/anz-egate
+[link-packagist]: https://packagist.org/packages/PHPieces/anz-egate
 [link-travis]: https://travis-ci.org/PHPieces/anz-egate
 [link-scrutinizer]: https://scrutinizer-ci.com/g/PHPieces/anz-egate/code-structure
 [link-code-quality]: https://scrutinizer-ci.com/g/PHPieces/anz-egate
-[link-downloads]: https://packagist.org/packages/phpieces/anz-egate
+[link-downloads]: https://packagist.org/packages/PHPieces/anz-egate
 [link-author]: https://github.com/:author_username
 [link-contributors]: ../../contributors
