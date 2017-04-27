@@ -2,7 +2,6 @@
 
 namespace PHPieces\ANZGateway\models;
 
-use PHPieces\ANZGateway\Config;
 use PHPieces\ANZGateway\enums\FormFields\MerchantFields;
 use PHPieces\ANZGateway\exceptions\InvalidMerchantDetails;
 
